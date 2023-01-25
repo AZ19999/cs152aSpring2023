@@ -35,6 +35,11 @@ p q { /* any q inside of a p will have this style*/
     word-spacing: 4em;
 }
 
+p2 {
+    text-decoration: underline;
+    text-align: center;
+}
+
 body {
     background-image: url(StyledHTMLbg.jpg);
     background-repeat: no-repeat; /* repeated by default, can do repeat x to repeat x times*/
