@@ -1,0 +1,10 @@
+p {
+    color: white;
+    background-color: black;
+    font-style: italic;
+    font-weight: bold;
+}
+
+p q {
+    font-style: italic;
+}

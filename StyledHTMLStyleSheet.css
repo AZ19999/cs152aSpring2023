@@ -1,0 +1,45 @@
+h1 {
+    color: rgb(69, 32, 115);
+    background-color: rgba(155, 107, 57, 1); /* a can be from 0 - 1*/
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+}
+
+h2 {
+    color: rgba(42, 200, 15, 0.7);
+    font-family: 'Comic Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: overline underline;
+    text-align: justify;
+}
+
+h3 {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: right;
+    word-spacing: 10px;
+}
+
+p {
+    color: white;
+    background-color: blue;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bolder;
+    letter-spacing: 15px;
+    text-indent: 50px;
+}
+
+p q { /* any q inside of a p will have this style*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: larger; /* use em for x times larger, 3em = 3x larger*/
+    font-style: italic;
+    line-height: 2em;
+    word-spacing: 4em;
+}
+
+body {
+    background-image: url(StyledHTMLbg.jpg);
+    background-repeat: no-repeat; /* repeated by default, can do repeat x to repeat x times*/
+}
+
+ol {
+    list-style-type: lower-roman;
+}
