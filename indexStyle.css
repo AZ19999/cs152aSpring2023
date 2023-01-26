@@ -1,0 +1,128 @@
+body {
+    font-size: 20px; /*applied to anything in body tag, style will get inherited from containing elements. not all get inherited*/
+    font-family: sans-serif;
+    background-color: pink;
+    color:antiquewhite;
+}
+p {
+    color: green;
+    background-color: yellow;
+}
+
+q {
+    color:blueviolet;
+}
+
+em {
+    color: chartreuse;
+}
+
+em#recent.awesome {
+    color:chocolate;
+}
+
+.awesome {
+    color:bisque;
+}
+
+em.awesome {
+    color:cornflowerblue;
+}
+
+#recent {
+    color: black
+}
+
+a {
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+
+h2 {
+    font-weight: bold;
+    text-align: center;
+}
+
+p,h1,h2 {
+    background-color: whitesmoke;
+}
+
+.BlueColor {
+    color:blue;
+}
+
+.RedColor {
+    color: red;
+}
+
+#YelloColor {
+    color: yellow;
+}
+
+#mission { /*element with id=mission*/
+    font-style: oblique;
+}
+
+.special { /*any element with class="special"*/
+    font-weight: bolder;
+}
+
+p.shout { /* p elements with class=shout*/
+    font-family: cursive;
+}
+
+/*Class elements*/
+
+a:link { /*unvisited link*/
+    color: #FF0000;
+}
+
+a:visited { /*visited link*/
+    color: #00FF00;
+}
+
+p::first-line {
+    color:black;
+}
+
+p::first-letter {
+    color: royalblue;
+    size: 50px;
+}
+
+a:hover {
+    color:deeppink;
+}
+
+a:active { /*when you click on an a object*/
+    color:darkolivegreen;
+}
+
+selector1 selector2 { /*applies to selector2 only if it is inside a selector1 on the page*/
+    font-weight: lighter;
+}
+
+selector1 > selector2 { /* applies to selector2 only if it is a direct child of selector1*/
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
+/*
+Elements cascade in this order
+    Browser default
+    external style sheet
+    internal style sheet
+    inline style
+*/
+
+/*
+points determine what rule "wins"
+    different types of elements give different points
+        tags give 1
+        class give 10
+        id gives 100
+        em gives 1
+        .awesome gives 10
+    when they have the same specificity the last one will be applied
+*/
