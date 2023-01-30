@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <style>
+            header {
+                color: aquamarine;
+                background-color: black;
+                padding: 20px;
+                text-align: center;
+            }
+            nav {
+                overflow: hidden;
+                background-color: goldenrod;
+            }
+            nav a {
+                float: left;
+                display: block;
+                color: blueviolet;
+                text-align: center;
+                padding: 16px 16px; /*first one is top, second one is left/right*/
+                text-decoration: none;
+            }
+            
+            nav a:hover {
+                background-color: red;
+                color: black;
+            }
+
+            section {
+                float: left;
+                padding: 20px;
+                width: 80%
+            }
+
+            section article {
+                width: 100%;
+                background-color: blanchedalmond;
+            }
+
+            article > p { /*changing p elements within article section*/
+                color: blue;
+            }
+
+            article > h2 {
+                font-family: sans-serif;
+            }
+
+            aside {
+                width: 20%; /*20% to respect section which already has 80% of the space */
+                float: right;
+                padding: 20px;
+                background-color: bisque;
+            }
+
+            * {
+                box-sizing: border-box; /*includes border size versus content-box which only counts the content*/
+            }
+
+        </style>
+        <!--<link rel="stylesheet" href="navigations2Style.css"> no stylesheet is needed as we are doing a stylesheet in the head-->
+        <title>Webpage with navigation</title>
+    </head>
+    <body>
+
+        <header>
+            <h1>Page header</h1>
+        </header>
+
+        <nav>
+            <a href="navigations.html">other layout page</a>
+            <a href="#">Nav 2</a>
+        </nav>
+
+        <section>
+            <article>
+                <h2>clickbait content</h2>
+                <p>There was a man who hated my guts</p>
+            </article>
+        </section>
+
+        <aside>
+            <h4>I'm distracting!</h4>
+        </aside>
+
+    </body>
+</html>

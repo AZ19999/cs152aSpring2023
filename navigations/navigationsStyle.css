@@ -1,0 +1,8 @@
+#topmenu li{ /*apply to all li elements in class topmenu*/
+    display: inline;
+    border: 2px solid gray;
+    margin-right: 1em;
+    list-style-type: none;
+}
+
+/*different methods for layouts, use stuff like CSS grid and flexbox to help layout child elements within parent elements*/
