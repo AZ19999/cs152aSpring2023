@@ -3,7 +3,7 @@
         <title>Form moment</title>
     </head>
     <body>
-        <h2>Login</h2>
+        <h2>Signup Form</h2>
         <form action="" method="get"> <!--action is where you want the form to go, method is things like GET or POST-->
             <div>First name: <input type="text" name="firstName"></div>
             <div>Last name: <input type="text" name="lastName"></div>
@@ -12,10 +12,11 @@
             <input type="submit" name="submitButton">
             <input type="reset" name="resetButton">
         </form>
+
         <h2>Google search button</h2>
         <form action="https://www.google.com/search" method="get">
-            <div>Lets search google! 
-                <input type="text" name="query">
+            <div> <label for="searchBox">Lets search google! </label>
+                <input type="text" name="q" id="searchBox">
                 <input type="submit" name="submitButton">
             </div>
         </form>
