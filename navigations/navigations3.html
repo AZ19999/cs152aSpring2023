@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             header {
                 color: aquamarine;
@@ -7,6 +8,7 @@
                 padding: 20px;
                 text-align: center;
             }
+
             nav {
                 overflow: hidden;
                 background-color: goldenrod;
@@ -26,34 +28,15 @@
             }
 
             section {
-                float: left;
-                padding: 20px;
-                width: 80%
+                display: flex; /*denotes "section" as a flex box item*/
+                flex-wrap: wrap;
             }
 
-            section article {
-                width: 40%;
-                background-color: blanchedalmond;
-                float: left;
-                border: 2px dashed blue;
-                height: 100px;
-                overflow: scroll; /*can use hidden to cut off overflow content*/
-            }
-
-            article > p { /*changing p elements within article section*/
-                color: blue;
-            }
-
-            article > h2 {
-                font-family: sans-serif;
-            }
-
-            aside {
-                width: 20%; /*20% to respect section which already has 80% of the space */
-                float: right;
-                padding: 20px;
-                background-color: bisque;
+            article {
+                padding: 10px;
                 border: 2px solid black;
+                background-color: aqua;
+                flex: 1; /*variables: flex growth factor, scale, how does it stretch*/
             }
 
             * {
@@ -69,14 +52,20 @@
                 width: 100%;
             }
 
+            @media screen and(max-width:600px) { /*asking for max width of the screen*/
+                article {
+                    flex: 100%;
+                }
+            }
+
         </style>
         <!--<link rel="stylesheet" href="navigations2Style.css"> no stylesheet is needed as we are doing a stylesheet in the head-->
-        <title>Webpage with navigation</title>
+        <title>Webpage with navigation again</title>
     </head>
     <body>
 
         <header>
-            <h1>Page header</h1>
+            <h1>Check out these flexboxes</h1>
         </header>
 
         <nav>
@@ -100,16 +89,6 @@
                 <p>There was a man who ate my guts</p>
             </article>
         </section>
-
-        
-
-        <aside>
-            <h4>I'm distracting!</h4>
-        </aside>
-
-        <footer>
-            <p>end of the page!</p>
-        </footer>
 
     </body>
 </html>

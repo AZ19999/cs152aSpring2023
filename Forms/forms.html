@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Form moment</title>
+    </head>
+    <body>
+        <h2>Login</h2>
+        <form action="" method="get"> <!--action is where you want the form to go, method is things like GET or POST-->
+            <div>First name: <input type="text" name="firstName"></div>
+            <div>Last name: <input type="text" name="lastName"></div>
+            <div>Student ID number: <input type="text" name="studentID"></div>
+            <div>Email: <input type="text" name="email"></div>
+            <input type="submit" name="submitButton">
+            <input type="reset" name="resetButton">
+        </form>
+        <h2>Google search button</h2>
+        <form action="https://www.google.com/search" method="get">
+            <div>Lets search google! 
+                <input type="text" name="query">
+                <input type="submit" name="submitButton">
+            </div>
+        </form>
+    </body>
+</html>
+
+<!--HTTP has two methods: GET and POST, both are protocols for accessing things on server
+
+how to get request
+    URL(GET)
+    Form(GET, POST)
+
+    GET: only has header(parameters can only be sent in the header)
+    POST: Has header and body(parameters are sent in body)
+
+
+    GET
+        -asks a server for page/data
+        -the request parameters are sent in the url as part of a query string
+        -cant have special characters
+        -fine if data doesn't need to be changed
+    
+    POST
+        -use if things need to be changed
+        -submits data to a server
+        -parameters are in the body, not URL
+-->
