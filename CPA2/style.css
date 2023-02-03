@@ -1,96 +1,95 @@
-body {
+body { /*we make the background black because it's a little easier on the eyes, font for the entire page is going to be sans-serif since it's a digital only website*/
     font-family: sans-serif;
     background-color: black;
+
 }
 
-header {
+header { /*we make this a flex box to allow both the image and the text to share the same line*/
     display: flex;
-    color: whitesmoke;
+    color: white;
     background-color: black;
     padding: 10px 10px;
     width: 100%;
+    justify-content: space-between;
+
 }
 
-header > h1 {
+header > h1 { /*I wanted to make the font of my name slightly different than the rest to make it stand out more*/
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     width: 90%;
+    padding: 10px;
     float: left;
 
 }
 
-header > img {
+header > img { /*This tells the image it should stay at the right side of the page*/
     float: right;
     width:10%;
+
 }
 
-nav {
-    display:flex;
+nav { /*making the navbar white to give more variety to the background*/
+    display: flex;
     background-color: white;
+
 }
 
-nav a {
+nav a { /*nav elements will become small boxes with their own space*/
     float: left;
     display: block;
     color: black;
     text-align: center;
-    padding: 16px 16px; /*first one is top, second one is left/right*/
+    padding: 16px 16px;
     text-decoration: none;
+
 }
 
-nav a:hover {
+nav a:hover { /*I wanted blue to show when you hover over nav items to make the individual buttons distinct, text changes to white to make it easier to read against blue*/
     background-color: darkblue;
     color: white;
+
 }
 
-section {
-    display: flex; /*denotes "section" as a flex box item*/
+section { /*this allows the section boxes to have flex with each other*/
+    display: flex;
     flex-wrap: wrap;
+
 }
 
-section > h4 {
+section > h4 { /*I needed to make a new section with a divider title in between the two main big sections, kept it white to match existing theme*/
     font-size: larger;
-    font-family: Arial, Helvetica, sans-serif;
     color: white;
     text-decoration: underline;
+
 }
 
-article {
+article { /*dark blue border for extra color, allowed flexing, and keeping the same color theme of the page*/
     padding: 10px;
     border: 2px solid darkblue;
     background-color: black;
     color: white;
-    flex: 1; /*variables: flex growth factor, scale, how does it stretch*/
+    flex: 1;
+
 }
 
-caption, article > tr, td, th {
+caption, article > tr, td, th { /*grouped individual table elements as a lot of them can be addressed at the same time for style consistency*/
     color: white;
+
 }
 
-* {
-    box-sizing: border-box; /*includes border size versus content-box which only counts the content*/
-}
-
-footer {
-    clear: both; /*clears all elements before the element, allows the footer to actually be at the bottom of the page*/
-    text-align: center;
-    background-color: black;
-    color: white;
-    bottom: 0;
-    width: 100%;
-    padding: 15px 15px;
-}
-
-img.articleSize {
+img.articleSize { /*wanted to make the image I put in the trading card game article smaller so it wouldn't eat up the entire page*/
     max-width: 50%;
     max-height: 50%;
+
 }
 
-article > h2 {
+article > h2 { /*wanted to make headers in articles feel more distinct from the article text*/
     font-weight: bold;
     text-decoration: underline;
+
 }
 
-#pineappleBest {
+#pineappleBest { /*really needed to emphasize how cool pineapple is*/
     color: yellow;
     background-color: green;
     text-align: center;
@@ -98,4 +97,17 @@ article > h2 {
     font-size: 5em;
     text-decoration: underline;
     border: 2px solid yellow;
+
+}
+
+footer { /*used clear to ensure that the footer would be at the bottom of the page, gave it some extra space so it didn't feel crushed by the articles*/
+    clear: both;
+    text-align: center;
+    background-color: black;
+    color: white;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 15px;
+    border: 2px solid white;
+
 }
