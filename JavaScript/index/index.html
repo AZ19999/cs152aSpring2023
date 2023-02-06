@@ -7,5 +7,109 @@
 </head>
 <body>
     <h1>Hello world!</h1>
+    <h2>if you inspect element and see the console, it should have outputted "hello world!"</h2>
+
+    <hr>
+    <h2>puts a browser alert up telling you that the button has been pressed</h2>
+    <button onclick="myfunction()">Click me!</button> <!--can make any html element responsive, executes javascript code whenever it is triggered-->
+
+    <!--Can write script in body or in separate file-->
+    <script>
+        function myfunction() {
+            alert("button has been pressed!")
+        }
+    </script>
+    <!--alerts are annoying as they stop the rest of the page-->
+
+    <hr>
+    <h2>This image will change when you hover over it</h2>
+    <p>
+        guoba:
+        <img onmouseenter="myfunction2()" onmouseleave="myfunction3()" src="guoba.jpg" alt="guoba from genshin impact" id="img">
+        most powerful god ever!
+    </p>
+
+    <script>
+        function myfunction2() {
+            const img = document.getElementById("img");
+            img.src = "flumph.PNG";
+        }
+    </script>
+
+    <script>
+        function myfunction3() {
+            const img = document.getElementById("img");
+            img.src = "guoba.jpg";
+        }
+    </script>
+
+    <hr>
+    <h2>Clicking the button will replace the box in the textbox</h2>
+    <button onclick="changeText()">Click me!</button>
+    <input id="output" type="text" value="replace me!">
+
+    <script>
+        function changeText() {
+            const textbox = document.getElementById("output");
+            textbox.value = "Hello world!";
+        }
+    </script>
+
+    <hr>
+    <h2>clicking the button will replace the paragraph text</h2>
+    <p id="replaceme"> test</p>
+    <button onclick="changeText2()">Click me!</button>
+
+    <script>
+        function changeText2() {
+            const p = document.getElementById("replaceme");
+            p.innerHTML = "Hello world!";
+        }
+    </script>
+    <!--innerHTML can access elements that are inside of html tagged stuff like p and spans-->
+
+    <hr>
+    <h2>clicking the button will swap the parapraph text and the textbox texxt</h2>
+    <button onclick="swapText()">click me!</button>
+    <span id="output2">Hello!</span>
+    <input id="textbox2" type="text" value="goodbye!">
+
+    <script>
+        function swapText() {
+            var span = document.getElementById("output2");
+            var textBox = document.getElementById("textbox2");
+            var temp = span.innerHTML;
+            span.innerHTML = textBox.value;
+            textBox.value = temp;
+        }
+    </script>
+
+    <hr>
+    <h2>clicking the button will update the paragraph text depending on what you input for the box</h2>
+    <input id="sid" type="text" size="7" maxlength="7">
+    <input id="fresh" type="checkbox" checked="checked">
+    <button id="btn" onclick="swapText2()">click me!</button>
+    <p id="myPg">
+        some text lol
+    </p>
+
+    <script>
+        //document.getElementById("btn").addEventListener("click", swapText2());
+
+        function swapText2() {
+            document.getElementById("myPg").innerHTML = document.getElementById("fresh").checked;
+            document.getElementById("myPg").style.color = "blue";
+        }
+    </script>
+    
+    <hr>
+    <p id = "paragraph" onmouseenter="changeTextColor()">some text</p>
+
+    <script>
+        function changeTextColor() {
+            document.getElementById("paragraph").style.color = "red";
+
+        }
+    </script>
 </body>
 </html>

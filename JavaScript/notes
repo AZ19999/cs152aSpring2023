@@ -6,3 +6,29 @@ object orientated and event driven
 not related to java except for name and some syntax
     -automatic semicolon insertion
 
+
+
+event driven code
+    -js has no main
+    -they only respond to browser and user actions(events)
+
+events 
+    -basically anything that happens on the page
+
+how it works
+    -code that responds to something happening
+        -i.e. button press = event -> run code -> change page based on code
+
+how to make things responsive
+    -figure out what element should be responsive and what should happening
+    -write a js script that will execute what you want to run
+    -attach function to the event
+
+Document Object Model
+    -DOM is an API where js programmers can access and manipulate html elements in code
+    -check element's state(is checked or not)
+    -change state of elements(insert text into a div)
+    -change styles of elements(make the text red)
+    -every HTML object can be seen by DOM
+       <img> src="foo" ald ="foo1" id="foo2"
+       can use document.getelementbyid(id) to get the element
