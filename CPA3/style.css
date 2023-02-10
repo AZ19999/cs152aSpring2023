@@ -1,13 +1,13 @@
 body { /*we make the background black because it's a little easier on the eyes, font for the entire page is going to be sans-serif since it's a digital only website*/
     font-family: sans-serif;
-    background-color: black;
+    background-color: white;
 
 }
 
 header { /*we make this a flex box to allow both the image and the text to share the same line*/
     display: flex;
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: white;
     padding: 10px 10px;
     width: 100%;
 
@@ -22,7 +22,7 @@ header > h1 { /*I wanted to make the font of my name slightly different than the
 }
 
 header > h2 {
-    font-family: sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 header > img { /*This tells the image it should stay at the right side of the page*/
@@ -33,14 +33,14 @@ header > img { /*This tells the image it should stay at the right side of the pa
 
 nav { /*making the navbar white to give more variety to the background*/
     display: flex;
-    background-color: white;
+    background-color: black;
 
 }
 
 nav a { /*nav elements will become small boxes with their own space*/
     float: left;
     display: block;
-    color: black;
+    color: white;
     text-align: center;
     padding: 16px 16px;
     text-decoration: none;
@@ -56,26 +56,37 @@ nav a:hover { /*I wanted blue to show when you hover over nav items to make the 
 section { /*this allows the section boxes to have flex with each other*/
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 50px;
+    width:60%;
 
 }
 
 article { /*dark blue border for extra color, allowed flexing, and keeping the same color theme of the page*/
     padding: 10px;
-    border: 2px solid darkblue;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     flex: 1;
 
 }
 
+article > h2, h3 {
+    color:darkblue;
+}
+
 footer { /*used clear to ensure that the footer would be at the bottom of the page, gave it some extra space so it didn't feel crushed by the articles*/
     clear: both;
-    text-align: center;
-    background-color: black;
-    color: white;
+    text-align: left;
+    background-color: lightgray;
+    color: black;
     bottom: 0;
     width: 100%;
     padding: 15px 15px;
-    border: 2px solid white;
+    border: 2px solid gray;
 
+}
+
+@media screen and (max-width:600px) { /*asking for max width of the screen*/
+    article {
+        flex: 100%;
+    }
 }
