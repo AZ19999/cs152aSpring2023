@@ -1,0 +1,21 @@
+ul > li {
+    background-color: blue;
+}
+
+li strong {
+    color: red;
+}
+
+li > strong {
+    color: green;
+}
+
+#ad li.line {
+    text-decoration: underline;
+}
+
+/*div is a block element while span is an inline element
+
+no onscreen appearance, but 
+
+*/

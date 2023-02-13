@@ -19,7 +19,7 @@ server.on("request",(request, response) => {
     console.log("Headers: " + request.headers);
    // console.log("An incoming request recieved!");
     response.writeHead(statusCodes.OK, {"content-type":"text/html"});
-    let responseMessage = "<style>body {background-color: blue;} h1 {color: red; font-family: sans-serif; }</style> <h1>Welcome to my page!</h1>";
+    let responseMessage = "<style>body {background-color: grey;} h1 {color: red; font-family: sans-serif; }</style> <h1>Welcome to my page!</h1>";
     response.write(responseMessage);
     response.end();
     //console.log(`A response with content ${responseMessage} was sent`); //used a tilde to keep the funny string
@@ -29,3 +29,4 @@ server.on("request",(request, response) => {
 //better the use response to handle incoming data from request
 
 console.log("The server is started");
+
