@@ -1,0 +1,11 @@
+MVC architecture forcues on the three main parts of app functionality
+    -Models
+        -object orientated data in app/database
+    -Views
+        -how data is rendered from the app
+    -Controllers
+        -perform the logic when the request is recieved and the data is supposed to be displayed
+        -involves both views and models
+
+export the get and post functions and make a model folder
+
