@@ -49,18 +49,5 @@ router.get("/", (request, response) => {
     files.customReadFile("./views/jobs.html", response);
   
   });
-  
-  router.get("/style.css", (request, response) => {
-    response.writeHead(200, contentType.cssType);
-    files.customReadFile("./public/css/style.css", response);
-  
-  });
-
-  router.get("/BrandeisLogo.png", (request, response) => {
-    response.writeHead(200, contentType.pngType);
-    files.customReadFile("./public/images/BrandeisLogo.png", response);
-  
-  });
-
 
   console.log("The server is started");

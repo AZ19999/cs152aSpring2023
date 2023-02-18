@@ -1,20 +1,19 @@
 body { /*we make the background black because it's a little easier on the eyes, font for the entire page is going to be sans-serif since it's a digital only website*/
+    background-color: lightgray;
     font-family: sans-serif;
-    background-color: white;
 
 }
 
 header { /*we make this a flex box to allow both the image and the text to share the same line*/
+    font-family: 'Times New Roman', Times, serif;
     display: flex;
     color: black;
-    background-color: white;
     padding: 10px 10px;
     width: 100%;
 
 }
 
-header > h1 { /*I wanted to make the font of my name slightly different than the rest to make it stand out more*/
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+header > h1 {
     width: 90%;
     padding: 10px;
     float: left;
@@ -22,16 +21,18 @@ header > h1 { /*I wanted to make the font of my name slightly different than the
 }
 
 header > h2 {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: darkblue;
+    border: 2px solid darkblue;
+
 }
 
-header > img { /*This tells the image it should stay at the right side of the page*/
+header > img { /*This tells the image it should stay at the left side of the page*/
     float: left;
-    width:10%;
+    width: 10%;
 
 }
 
-nav { /*making the navbar white to give more variety to the background*/
+nav { /*making the navbar black to give more variety to the background*/
     display: flex;
     background-color: black;
 
@@ -44,12 +45,14 @@ nav a { /*nav elements will become small boxes with their own space*/
     text-align: center;
     padding: 16px 16px;
     text-decoration: none;
+    border: 1px solid darkgray;
 
 }
 
-nav a:hover { /*I wanted blue to show when you hover over nav items to make the individual buttons distinct, text changes to white to make it easier to read against blue*/
+nav a:hover { /*I wanted blue to show when you hover over nav items to make the individual buttons distinct*/
     background-color: darkblue;
     color: white;
+    text-decoration: underline;
 
 }
 
@@ -63,7 +66,6 @@ section { /*this allows the section boxes to have flex with each other*/
 
 article { /*dark blue border for extra color, allowed flexing, and keeping the same color theme of the page*/
     padding: 10px;
-    background-color: white;
     color: black;
     flex: 1;
 
@@ -76,13 +78,23 @@ article > h2, h3 {
 footer { /*used clear to ensure that the footer would be at the bottom of the page, gave it some extra space so it didn't feel crushed by the articles*/
     clear: both;
     text-align: left;
-    background-color: lightgray;
+    background-color: darkgray;
+    display: flex;
     color: black;
     bottom: 0;
     width: 100%;
-    padding: 15px 15px;
+    padding: 10px 10px;
     border: 2px solid gray;
 
+}
+
+footer > p {
+    float: left;
+    width: 85%;
+}
+
+footer > img {
+    float: right;
 }
 
 @media screen and (max-width:600px) { /*asking for max width of the screen*/
