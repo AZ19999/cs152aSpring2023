@@ -1,0 +1,76 @@
+<div id="nav" style="background-color: aquamarine;">Nav</div>
+<%- body %>
+----------------
+<%- include(partials/nav) %>
+<h1>Hello, <%= name %></h1>
+
+----------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<%- include(partials/nav) %>
+<body>
+  <form action="/" method="post">
+    <input type="text" name="myName">
+    <input type="submit">
+  </form>
+</body>
+</html>
+
+
+
+index.js:
+const express = require("express");
+const homeController = require("./controllers/homeCtroller");
+const app = express();
+app.use(express.static("public"));
+app.get("/", homeController.homePage);
+app.listen(3000, () => {
+  console.log("The server is running on port 3000");
+});
+
+---------------------------
+homeController.js:
+exports.homePage = (req, res) => {
+  res.sendFile(`/views/index.html`, { root: "." });
+};
+
+----------------------------
+index.html:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Welcome to my page</h1>
+    <p>You are watching a page with blue background and a cat!</p>
+    <img src="/images/cat.jpg" alt="" />
+  </body>
+</html>
+
+-----------------------------------
+style.css:
+body {
+  background-color: blue;
+}
+h1,
+p {
+  text-align: center;
+  background-color: beige;
+}
+img {
+  width: 50%;
+  height: 50%;
+  padding-left: 25%;
+  padding-right: 25%;
+}
