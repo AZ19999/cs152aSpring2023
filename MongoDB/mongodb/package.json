@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "mongodb": "^3.7.3"
+  },
+  "name": "mongodb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexander Zhu",
+  "license": "ISC",
+  "description": ""
+}
