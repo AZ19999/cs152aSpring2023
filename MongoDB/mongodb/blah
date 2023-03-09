@@ -1,0 +1,31 @@
+const MongoClient = require('mongodb').MongoClient;
+
+const url = 'mongodb://localhost:27017';
+const dbName = 'myproject';
+
+MongoClient.connect(url, function(error, client) {
+  if (error) throw error;
+  const db = client.db(dbName);
+  const collection = db.collection('contacts');
+  collection.updateOne({ name: 'John' }, { $set: { phone: '111-111-1111' } }, function(error, result) {
+    if (err) throw err;
+    console.log(result.modifiedCount + " document updated");
+    client.close();
+  });
+});
+
+const MongoClient = require('mongodb').MongoClient;
+
+const url = 'mongodb://localhost:27017';
+const dbName = 'myproject';
+
+MongoClient.connect(url, function(error, client) {
+  if (error) throw error;
+  const db = client.db(dbName);
+  const collection = db.collection('contacts');
+  collection.deleteOne({ name: 'John' }, function(error, result) {
+    if (error) throw error;
+    console.log(result.deletedCount + " document deleted");
+    client.close();
+  });
+});

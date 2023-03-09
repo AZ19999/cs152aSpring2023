@@ -1,0 +1,33 @@
+header {
+  background-color: lightblue;
+  padding: 35px;
+  padding-bottom: 20px;
+  width: 100%;
+
+}
+
+.header {
+  text-align: center;
+  width: 100%;
+
+}
+
+.header h1 {
+  color: gray;
+
+}
+
+* {
+  box-sizing: border-box;
+
+}
+
+footer {
+  background-color: lightblue;
+  color: coral;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  
+}
