@@ -15,7 +15,7 @@ app.use(express.static('public'));
 app.get('/', homeController.responseWithName);
 app.get('/name/:myName', homeController.responseWithName);
 app.get('/form', homeController.displayForm);
-app.get('/form.html', homeController.oldDisplayForm);
+//app.get('/form.html', homeController.oldDisplayForm);
 app.post('/', homeController.respondWithForm);
 
 //error handler
