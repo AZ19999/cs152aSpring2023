@@ -1,15 +1,38 @@
-exports.showCourses = (request, response) => {
-  response.render("courses", { offeredCourses: courses });
+var express = require("express");
+var router = express.Router();
 
-};
+// home page to all has get and post methods
+router.get("/", function (req, res, next) {
+  res.render("index");
+});
 
-exports.showContact = (request, response) => {
+router.get("/index", function (req, res, next) {
+  res.render("index");
+});
 
-  response.render("contact");
+router.get("/about", function (req, res, next) {
+  res.render("about");
+});
 
-};
-exports.postedContactForm = (request, response) => {
+router.get("/jobs", function (req, res, next) {
+  res.render("jobs");
+});
 
-  response.render("thanks");
+router.get("/events", function (req, res, next) {
+  res.render("events");
+});
 
-};
+router.get("/contact", function (req, res, next) {
+  res.render("contact");
+});
+
+router.post("/membershipSuccess", function(req, res, next) {
+  res.render("membershipSuccess", {name: req.body.firstName});
+});
+
+router.post("/contactSuccess", function(req, res, next) {
+  res.render("contactsuccess", {name: req.body.name});
+});
+
+
+module.exports = router;
