@@ -1,7 +1,7 @@
 {
   "name": "brandeis_saa_express",
   "version": "1.0.0",
-  "description": "",
+  "description": "A webpage for the Brandeis Student and Alumni Association created for CPA5 of CS152a Spring 2023",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
