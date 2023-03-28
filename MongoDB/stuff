@@ -1,0 +1,143 @@
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost:27017/recipe_db");
+const db = mongoose.connection;
+const Subscriber = require("./models/subscriber");
+
+Subscriber.create({
+  name: "test",
+  email: "test@gmail.com",
+  zipCode: 234,
+})
+  .then(() => {
+    Subscriber.findOne({ name: "test" }).then((data) => {
+      console.log(data);
+    });
+  })
+  .then(() => {
+    Subscriber.deleteOne({ name: "test" }).then((data) => {
+      console.log("deleted");
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+  student.js:
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const studentSchema = new Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  age: {
+    type: Number,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    lowercase: true
+  },
+  address: {
+    street: String,
+    city: String,
+    state: String,
+    zip: String
+  },
+  courses: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Course'
+  }]
+});
+const Student = mongoose.model('Student', studentSchema);
+module.exports = Student;
+-----------------------------------
+
+course.js:
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const courseSchema = new Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  instructor: {
+    type: String,
+    required: true
+  },
+  price: {
+    type: Number,
+    required: true
+  },
+  students: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Student'
+  }]
+});
+const Course = mongoose.model('Course', courseSchema);
+module.exports = Course;
+
+A sample solution:
+
+--------------------------------------------
+Route:
+router.get(
+  "/subscribers/:id",
+  subscribersController.subscriber,
+  subscribersController.showSubscriberView
+);
+
+
+
+------------------------------------------
+controller:
+subscriber: (req, res, next) => {
+    let userId = req.params.id;
+    Subscriber.findById(userId)
+      .then((subscriber) => {
+        res.locals.subscriber = subscriber;
+        next();
+      })
+      .catch((error) => {
+        console.log(`Error fetching user by ID: ${error.message}`);
+        next(error);
+      });
+  },
+  showSubscriberView: (req, res) => {
+    res.render("subscribers/show");
+  },
+
+
+
+------------------------------------------------------
+view:
+<h1>Subscriber Data for <%= subscriber.name %></h1>
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <td><%= subscriber.name %></td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td><%= subscriber.email %></td>
+  </tr>
+  <tr>
+    <th>Zip Code</th>
+    <td><%= subscriber.zipCode %></td>
+  </tr>
+</table>
+
+
+
+
+                
+Regrade Requests
+Completed regrade requests
+  
+© 2022 Tim Hickey
