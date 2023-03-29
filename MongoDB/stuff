@@ -141,3 +141,18 @@ Regrade Requests
 Completed regrade requests
   
 © 2022 Tim Hickey
+
+
+Place your routes for login view listed below at the end of all the routes in your project and re-launch your project
+router.get("/users/login", usersController.login);
+router.post("/users/login", usersController.authenticate,usersController.redirectView);
+
+
+Why you project fails to render the login view?
+
+Tip: consider one of the similar previous routes with a parameterized path: router.get("/users/:id/edit", usersController.edit);
+
+Because you have routes that handle parameters in the URL, if those routes
+(such as /users/:id) come first, Express.js will treat a request to /users/login as a request to the
+user’s show page, where login is the :id. Order matters: if the /users/login route comes first,
+Express.js will match that route before checking the routes that handle parameters.
