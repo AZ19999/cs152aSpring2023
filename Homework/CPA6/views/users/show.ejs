@@ -1,9 +1,9 @@
 
-<h1>User Data for <%= user.fullName %></h1>
+<h1>User Data for <%= user.Name %></h1>
 <table>
   <tr>
     <th>Name</th>
-    <td><%= user.fullName %></td>
+    <td><%= user.Name %></td>
   </tr>
   <tr>
     <th>Email</th>
@@ -18,12 +18,6 @@
     <td><%= user.password %></td>
   </tr>
 </table>
-<% if (user.subscribedAccount) { %>
-<h4 class="center">
-  This user has a subscribed account</a
-  >.
-</h4>
-<% } %>
 
 
 <div>

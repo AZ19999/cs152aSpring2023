@@ -1,50 +1,110 @@
 <div class="data-form">
   <form method="POST" action="<%=`/users/${user._id}/update?_method=PUT`%>">
     <h2>Edit user:</h2>
-    <label for="inputFirstName">First Name</label>
+    <label for="inputName">Name</label>
     <input
       type="text"
-      name="first"
-      id="inputFirstName"
-      value="<%= user.name.first %>"
-      placeholder="First"
+      name="name"
+      id="inputName"
+      placeholder="name"
+      required
       autofocus
-    />
-    <label for="inputLastName">Last Name</label>
-    <input
-      type="text"
-      name="last"
-      id="inputLastName"
-      value="<%= user.name.last %>"
-      placeholder="Last"
     />
     <label for="inputPassword">Password</label>
     <input
       type="password"
       name="password"
       id="inputPassword"
-      value="<%= user.password %>"
       placeholder="Password"
       required
     />
-    <label for="inputEmail">Email address</label>
+    <label for="inputCourses">Courses</label>
     <input
-      type="email"
-      name="email"
-      id="inputEmail"
-      value="<%= user.email %>"
-      placeholder="Email address"
+      type="text"
+      name="course"
+      id="inputCourse"
+      placeholder="Courses"
       required
     />
-    <label for="inputZipCode">Zip Code</label>
+    <label for="inputRole">role</label>
+    <input
+      type="text"
+      name="role"
+      id="inputRole"
+      placeholder="Student"
+      required
+    />
+    <label for="inputGraduationYear">Graduation Year</label>
+    <input
+      type="text"
+      name="graduationYear"
+      id="inputGraduationYear"
+      placeholder="1999"
+      required
+    />
+    <label for="inputMajor">Major</label>
+    <input
+      type="text"
+      name="major"
+      id="inputMajor"
+      placeholder="Computer Science"
+      required
+    />
+    <label for="inputJob">Job</label>
+    <input
+      type="text"
+      name="job"
+      id="inputJob"
+      placeholder="Student"
+    />
+    <label for="inputCompany">Company</label>
+    <input
+      type="text"
+      name="company"
+      id="inputCompany"
+      placeholder="Brandeis"
+    />
+    <label for="inputCity">City</label>
+    <input
+      type="text"
+      name="city"
+      id="inputCity"
+      placeholder="Waltham"
+    />
+    <label for="inputState">State</label>
+    <input
+      type="text"
+      name="state"
+      id="inputState"
+      placeholder="Massachussetts"
+    />
+    <label for="inputCountry">Country</label>
+    <input
+      type="text"
+      name="country"
+      id="inputCountry"
+      placeholder="USA"
+    />
+    <label for="inputZip">Zip Code</label>
     <input
       type="text"
       name="zipCode"
-      id="inputZipCode"
-      pattern="\d*"
-      value="<%= user.zipCode %>"
-      placeholder="Zip Code"
-      required
+      id="inputZip"
+      placeholder="02171"
+    />
+    <label for="inputBio">Bio</label>
+    <input
+      type="text"
+      name="bio"
+      id="inputBio"
+      placeholder="Some cool facts about me!"
+    />
+    <label for="inputInterests">interests</label>
+    <input
+      type="text"
+      name="interests"
+      id="inputInterests"
+      placeholder="Reading, writing..."
     />
     <button type="submit">Update</button>
   </form>

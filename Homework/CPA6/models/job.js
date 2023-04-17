@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const courseSchema = mongoose.Schema({
+const jobSchema = mongoose.Schema({
   title: { type: String, required: true, },
   company: { type: String, required: true },
   location: { type: String, required: true },
@@ -13,5 +13,4 @@ const courseSchema = mongoose.Schema({
   isActive: { type: Boolean, default: true },
 });
 
-module.exports = mongoose.model("job", courseSchema);
-//module.exports = Course;
+module.exports = mongoose.model("Job", jobSchema);

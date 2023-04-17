@@ -1,49 +1,83 @@
 <div class="data-form">
-  <form method="POST" action="<%=`/users/${user._id}/update?_method=PUT`%>">
-    <h2>Edit user:</h2>
-    <label for="inputFirstName">First Name</label>
+  <form method="POST" action="<%=`/job/${job._id}/update?_method=PUT`%>">
+    <h2>Edit Job:</h2>
+    <label for="inputTitle">Title</label>
     <input
       type="text"
       name="first"
-      id="inputFirstName"
-      value="<%= user.name.first %>"
-      placeholder="First"
+      id="inputTitle"
+      placeholder="Title"
+      required
       autofocus
     />
-    <label for="inputLastName">Last Name</label>
+    <label for="inputCompany">Company</label>
     <input
       type="text"
-      name="last"
-      id="inputLastName"
-      value="<%= user.name.last %>"
-      placeholder="Last"
-    />
-    <label for="inputPassword">Password</label>
-    <input
-      type="password"
-      name="password"
-      id="inputPassword"
-      value="<%= user.password %>"
-      placeholder="Password"
+      name="company"
+      id="inputCompany"
+      placeholder="Brandeis"
       required
     />
-    <label for="inputEmail">Email address</label>
-    <input
-      type="email"
-      name="email"
-      id="inputEmail"
-      value="<%= user.email %>"
-      placeholder="Email address"
-      required
-    />
-    <label for="inputZipCode">Zip Code</label>
+    <label for="inputLocation">Location</label>
     <input
       type="text"
-      name="zipCode"
-      id="inputZipCode"
-      pattern="\d*"
-      value="<%= user.zipCode %>"
-      placeholder="Zip Code"
+      name="location"
+      id="inputLocation"
+      placeholder="Office"
+      required
+    />
+    <label for="inputDescription">Description</label>
+    <input
+      type="text"
+      name="description"
+      id="inputDescription"
+      placeholder="This job does..."
+      required
+    />
+    <label for="inputRequirements">requirements</label>
+    <input
+      type="text"
+      name="requirements"
+      id="inputRequirements"
+      required
+    />
+    <label for="inputSalary">Salary</label>
+    <input
+      type="text"
+      name="salary"
+      id="inputSalary"
+      placeholder="$1000"
+      required
+    />
+    <label for="inputContactEmail">Contact Email</label>
+    <input
+      type="text"
+      name="contactEmail"
+      id="inputContactEmail"
+      placeholder="person@brandeis.edu"
+      required
+    />
+    <label for="inputContactPhone">contactPhone/label>
+    <input
+      type="text"
+      name="contactPhone"
+      id="inputContactPhone"
+      placeholder="111-111-1111"
+      required
+    />
+    <label for="inputDeadline">Deadline</label>
+    <input
+      type="text"
+      name="deadline"
+      id="inputDeadline"
+      placeholder="Brandeis"
+      required
+    />
+    <label for="inputActive">Active</label>
+    <input
+      type="Boolean"
+      name="active"
+      id="inputActive"
       required
     />
     <button type="submit">Update</button>

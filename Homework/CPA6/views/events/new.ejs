@@ -1,41 +1,76 @@
 <div class="data-form">
   <form action="/users/create" method="POST">
-    <h2>Create a new user:</h2>
-    <label for="inputFirstName">First Name</label>
+    <h2>Create a new event:</h2>
+    <label for="inputTitle">Title</label>
     <input
       type="text"
-      name="first"
-      id="inputFirstName"
-      placeholder="First"
+      name="title"
+      id="inputTitle"
+      placeholder="New Event"
+      required
       autofocus
     />
-    <label for="inputLastName">First Name</label>
-    <input type="text" name="last" id="inputLastName" placeholder="Last" />
-    <label for="inputPassword">Password</label>
-    <input
-      type="password"
-      name="password"
-      id="inputPassword"
-      placeholder="Password"
-      required
-    />
-    <label for="inputEmail">Email address</label>
-    <input
-      type="email"
-      name="email"
-      id="inputEmail"
-      placeholder="Email address"
-      required
-    />
-    <label for="inputZipCode">Zip Code</label>
+    <label for="inputDescription">Description</label>
     <input
       type="text"
-      name="zipCode"
-      id="inputZipCode"
-      pattern="\d*"
-      placeholder="Zip Code"
+      name="description"
+      id="inputDescription"
+      placeholder="A Cool Event"
       required
     />
-    <button type="submit">Sign in</button>
+    <label for="inputLocation">Location</label>
+    <input
+      type="text"
+      name="location"
+      id="inputLocation"
+      placeholder="Office"
+      required
+    />
+    <label for="inputStartDate">Start Date</label>
+    <input
+      type="text"
+      name="startDate"
+      id="inputStartDate"
+      placeholder="tomorrow"
+      required
+    />
+    <label for="inputEndDate">End Date</label>
+    <input
+      type="text"
+      name="endDate"
+      id="inputEndDate"
+      placeholder="tomorrow"
+      required
+    />
+    <label for="inputIsOnline">Is it Online?</label>
+    <input
+      type="Boolean"
+      name="isOnline"
+      id="inputIsOnline"
+      required
+    />
+    <label for="inputRegistrationLink">Registration Link</label>
+    <input
+      type="text"
+      name="registrationLink"
+      id="inputRegistrationLink"
+      placeholder="URL"
+    />
+    <label for="inputOrganizer">Organizer</label>
+    <input
+      type="text"
+      name="Organizer"
+      id="inputOrganizer"
+      placeholder="Organizer"
+      required
+    />
+    <label for="inputAttendees">Attendees</label>
+    <input
+      type="text"
+      name="Attendees"
+      id="inputAttendees"
+      placeholder="5"
+    />
+    <button type="submit">Create</button>
   </form>
 </div>

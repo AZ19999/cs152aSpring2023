@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const subscriberSchema = mongoose.Schema({
+const eventSchema = mongoose.Schema({
   title: { type: String, required: true, },
   description: { type: String, required: true },
   location: { type: String, required: true },
@@ -11,11 +11,4 @@ const subscriberSchema = mongoose.Schema({
   attendees: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
 });
 
-subscriberSchema.methods.getInfo = function () {
-  return `Name: ${this.name}  Email: ${this.email}  Zip Code: ${this.zipCode}`;
-};
-subscriberSchema.methods.findLocalSubscribers = function () {
-  return this.model("Subscriber").find({ zipCode: this.zipCode }).exec();
-};
-
-module.exports = mongoose.model("Subscriber", subscriberSchema);
+module.exports = mongoose.model("Event", eventSchema);
