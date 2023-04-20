@@ -1,0 +1,85 @@
+<div class="data-form">
+  <form method="POST" action="<%=`/job/${job._id}/update?_method=PUT`%>">
+    <h2>Edit Job:</h2>
+    <label for="inputTitle">Title</label>
+    <input
+      type="text"
+      name="first"
+      id="inputTitle"
+      placeholder="Title"
+      required
+      autofocus
+    />
+    <label for="inputCompany">Company</label>
+    <input
+      type="text"
+      name="company"
+      id="inputCompany"
+      placeholder="Brandeis"
+      required
+    />
+    <label for="inputLocation">Location</label>
+    <input
+      type="text"
+      name="location"
+      id="inputLocation"
+      placeholder="Office"
+      required
+    />
+    <label for="inputDescription">Description</label>
+    <input
+      type="text"
+      name="description"
+      id="inputDescription"
+      placeholder="This job does..."
+      required
+    />
+    <label for="inputRequirements">requirements</label>
+    <input
+      type="text"
+      name="requirements"
+      id="inputRequirements"
+      required
+    />
+    <label for="inputSalary">Salary</label>
+    <input
+      type="text"
+      name="salary"
+      id="inputSalary"
+      placeholder="$1000"
+      required
+    />
+    <label for="inputContactEmail">Contact Email</label>
+    <input
+      type="text"
+      name="contactEmail"
+      id="inputContactEmail"
+      placeholder="person@brandeis.edu"
+      required
+    />
+    <label for="inputContactPhone">contactPhone/label>
+    <input
+      type="text"
+      name="contactPhone"
+      id="inputContactPhone"
+      placeholder="111-111-1111"
+      required
+    />
+    <label for="inputDeadline">Deadline</label>
+    <input
+      type="text"
+      name="deadline"
+      id="inputDeadline"
+      placeholder="Brandeis"
+      required
+    />
+    <label for="inputActive">Active</label>
+    <input
+      type="Boolean"
+      name="active"
+      id="inputActive"
+      required
+    />
+    <button type="submit">Update</button>
+  </form>
+</div>

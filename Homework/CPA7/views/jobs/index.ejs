@@ -1,0 +1,29 @@
+<h2>Users Table</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>location</th>
+      <th>Requirements</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% jobs.forEach(job => { %>
+    <tr>
+      <td><a href="<%= `/jobs/${job._id}`%>"><%= job.Title %></a></td>
+      <td><%= job.location %></td>
+      <td><%= job.requirements %></td>
+      <td>
+        <a href="<%=`/job/${job._id}/edit` %>"> Edit </a>
+      </td>
+      <td>
+        <a
+          href="<%= `jobs/${job._id}/delete?_method=DELETE` %>"
+          onclick="return confirm('Are you sure you want to delete this record?')"
+          >Delete</a
+        >
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
