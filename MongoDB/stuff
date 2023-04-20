@@ -238,3 +238,26 @@ validate: (req, res, next) => {
     });
   },
          
+
+  //respond with json method
+
+  app.get('/users', (req, res) => {
+    User.find({}, (err, users) => {
+      if (err) {
+        return res.status(500).json({ error: 'Error retrieving users' });
+      }
+      return res.json(users);
+    });
+  });
+  
+  app.get('/users/:id', (req, res) => {
+    User.findById(req.params.id, (err, user) => {
+      if (err) {
+        return res.status(500).json({ error: 'Error retrieving user' });
+      }
+      if (!user) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+      return res.json(user);
+    });
+  });
