@@ -14,6 +14,19 @@
       <a href="jobs">Jobs</a>
       <a href="events">Events</a>
       <a href="contact">Contact</a>
+      <div class="flashes">
+        <% if (flashMessages) { %> <% if (flashMessages.success) { %>
+        <div class="flash success"><%= flashMessages.success %></div>
+        <%} else if (flashMessages.error){ %>
+        <div class="flash error"><%= flashMessages.error %></div>
+        <%} %> <%} %>
+      </div>
+      <% if (loggedIn) { %> Logged in as
+      <a href="<%=`/users/${currentUser._id}`%>"><%= currentUser.fullName %></a
+      ><a href="/users/logout">Log out</a>
+      <%} else {%>
+      <a href="/users/login">Log In</a>
+      <% } %> 
     </nav>
     
     <div class="flashes">
@@ -28,7 +41,11 @@
     ><a href="/users/logout">Log out</a>
     <%} else {%>
     <a href="/users/login">Log In</a>
-    <% } %> <%- body%>
+    <% } %> 
+    
+    
+    
+    <%- body%>
 
     <footer>
       <p>&copy; Brandeis University Copyright 2023</p>

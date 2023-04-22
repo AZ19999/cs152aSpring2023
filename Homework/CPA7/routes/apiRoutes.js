@@ -1,10 +1,18 @@
 const router = require("express").Router(),
-  coursesController = require("../controllers/coursesController");
-router.get("/courses", coursesController.index, coursesController.respondJSON);
+  eventsController = require("../controllers/eventsController");
+  jobsController = require("../controllers/jobsController");
+router.get("/events", eventsController.index, eventsController.respondJSON);
 router.get(
   "/courses/:id/join",
-  coursesController.join,
-  coursesController.respondJSON
+  eventsController.join,
+  eventsController.respondJSON
 );
-router.use(coursesController.errorJSON);
+router.get("/jobs", jobsController.index, jobsController.respondJSON);
+router.get(
+  "/jobs/:id/join",
+  jobsController.join,
+  jobsController.respondJSON
+);
+router.use(eventsController.errorJSON);
+router.use(jobsController.errorJSON);
 module.exports = router;
