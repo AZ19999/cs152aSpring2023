@@ -15,7 +15,7 @@ module.exports = {
       });
   },
   indexView: (req, res) => {
-    res.render("jobs/index", { offeredCourses: res.locals.courses });
+    res.render("jobs/index");
   },
   respondJSON: (req, res) => {
     res.json({

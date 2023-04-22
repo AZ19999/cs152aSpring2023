@@ -11,9 +11,9 @@
     <nav>
       <a href="index">Home</a>
       <a href="about">About</a>
-      <a href="jobs">Jobs</a>
-      <a href="events">Events</a>
-      <a href="contact">Contact</a>
+      <a href="/jobs/index">Jobs</a>
+      <a href="/events/index">Events</a>
+      <a href="/contact/contact">Contact</a>
       <div class="flashes">
         <% if (flashMessages) { %> <% if (flashMessages.success) { %>
         <div class="flash success"><%= flashMessages.success %></div>
@@ -26,24 +26,9 @@
       ><a href="/users/logout">Log out</a>
       <%} else {%>
       <a href="/users/login">Log In</a>
-      <% } %> 
+      <% } %>
+      <a href="/users/new">Sign Up</a> 
     </nav>
-    
-    <div class="flashes">
-      <% if (flashMessages) { %> <% if (flashMessages.success) { %>
-      <div class="flash success"><%= flashMessages.success %></div>
-      <%} else if (flashMessages.error){ %>
-      <div class="flash error"><%= flashMessages.error %></div>
-      <%} %> <%} %>
-    </div>
-    <% if (loggedIn) { %> Logged in as
-    <a href="<%=`/users/${currentUser._id}`%>"><%= currentUser.fullName %></a
-    ><a href="/users/logout">Log out</a>
-    <%} else {%>
-    <a href="/users/login">Log In</a>
-    <% } %> 
-    
-    
     
     <%- body%>
 
