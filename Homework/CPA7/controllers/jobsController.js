@@ -1,21 +1,21 @@
-const Course = require("../models/course");
+const Job = require("../models/job");
 const User = require("../models/user");
 const httpStatus = require("http-status-codes");
 
 module.exports = {
   index: (req, res, next) => {
-    Course.find({})
-      .then((courses) => {
-        res.locals.courses = courses;
+    Job.find({})
+      .then((jobs) => {
+        res.locals.jobs = jobs;
         next();
       })
       .catch((error) => {
-        console.log(`Error fetching courses: ${error.message}`);
+        console.log(`Error fetching Jobs: ${error.message}`);
         next(error);
       });
   },
   indexView: (req, res) => {
-    res.render("courses/index", { offeredCourses: res.locals.courses });
+    res.render("jobs/index", { offeredCourses: res.locals.courses });
   },
   respondJSON: (req, res) => {
     res.json({
@@ -39,11 +39,11 @@ module.exports = {
     res.json(errorObject);
   },
   join: (req, res, next) => {
-    let courseId = req.params.id,
+    let jobId = req.params.id,
       currentUser = req.user;
     if (currentUser) {
       User.findByIdAndUpdate(currentUser, {
-        $addToSet: { courses: courseId },
+        $addToSet: { jobs: jobId },
       })
         .then(() => {
           res.locals.success = true;
