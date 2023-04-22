@@ -1,7 +1,7 @@
 {
   "name": "Brandeis_SAA",
   "version": "1.0.0",
-  "description": "",
+  "description": "A website dedicated to the Brandeis Student and Alumni Association",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

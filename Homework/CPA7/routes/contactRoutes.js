@@ -1,6 +1,6 @@
 
 const router = require("express").Router();
-router.get("/contact", function (req, res, next) {
+router.get("/", function (req, res, next) {
     res.render("contacts/contact");
   
   });
