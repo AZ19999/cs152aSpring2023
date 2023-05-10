@@ -1,7 +1,7 @@
 {
-  "name": "Brandeis_SAA",
+  "name": "mongoose",
   "version": "1.0.0",
-  "description": "A website dedicated to the Brandeis Student and Alumni Association",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,6 +22,8 @@
     "method-override": "^3.0.0",
     "mongoose": "^7.0.1",
     "passport": "^0.6.0",
-    "passport-local-mongoose": "^8.0.0"
+    "passport-local-mongoose": "^8.0.0",
+    "rand-token": "^1.0.1",
+    "socket.io": "^4.6.1"
   }
 }

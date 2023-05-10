@@ -10,6 +10,8 @@ const expressValidator = require("express-validator");
 const passport = require("passport");
 const User = require("./models/user");
 const router = require("./routes/index");
+const socketio = require("socket.io");
+const chatController = require("./controllers/chatController");
 
 const app = express();
 
@@ -58,6 +60,8 @@ app.use((req, res, next) => {
 
 app.use("/", router);
 
-app.listen(3000, () => {
+const server = app.listen(3000, () => {
   console.log("application is running");
 });
+const io = socketio(server);
+chatController(io);

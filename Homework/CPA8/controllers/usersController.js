@@ -1,5 +1,6 @@
 const User = require("../models/user");
 const passport = require("passport");
+const token = process.env.TOKEN || "recipeT0k3n";
 
 const getUserParams = (body) => {
   return {
@@ -133,6 +134,9 @@ module.exports = {
   }),
   validate: (req, res, next) => {
     req.sanitizeBody("email").trim();
+    // req.sanitizeBody("email").normalizeEmail({
+    //   all_lowercase: true,
+    // });
     req.check("email", "Email is invalid").isEmail();
     req.check("password", "Password cannot be empty").notEmpty();
     req.check("zipCode", "Zip code can not be empty").notEmpty();
@@ -162,5 +166,20 @@ module.exports = {
       res.locals.redirect = "/";
       next();
     });
+  },
+  verifyToken: (req, res, next) => {
+    let token = req.query.apiToken;
+    if (token) {
+      User.findOne({ apiToken: token })
+        .then((user) => {
+          if (user) next();
+          else next(new Error("Invalid API token."));
+        })
+        .catch((error) => {
+          next(new Error(error.message));
+        });
+    } else {
+      next(new Error("Invalid API token."));
+    }
   },
 };
