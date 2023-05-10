@@ -5,4 +5,7 @@ module.exports = {
   chat: (req, res) => {
     res.render("chat");
   },
+  about: (req, res) => {
+    res.render("about");
+  },
 };
