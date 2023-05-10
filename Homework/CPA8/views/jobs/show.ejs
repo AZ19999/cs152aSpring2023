@@ -1,0 +1,30 @@
+
+<h1>Job Data for <%= job.Title %></h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <td><%= job.Title %></td>
+  </tr>
+  <tr>
+    <th>location</th>
+    <td><%= job.location %></td>
+  </tr>
+  <tr>
+    <th>Salary</th>
+    <td><%= job.salary %></td>
+  </tr>
+  <tr>
+    <th>description</th>
+    <td><%= job.description %></td>
+  </tr>
+</table>
+
+<div>
+  <a href="/jobs">View all jobs</a>
+</div>
+<div>
+  <a href="<%=`/jobs/${job._id}/edit`%>">Edit Job Details</a>
+</div>
+<div>
+  <a href="<%= `/jobs/${job._id}/delete?_method=DELETE` %>" onclick="return confirm('Are you sure you want to delete this record?')">Delete</a>
+</div>
