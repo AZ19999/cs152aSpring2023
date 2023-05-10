@@ -1,14 +1,25 @@
 const router = require("express").Router(),
-  coursesController = require("../controllers/coursesController");
+  eventsController = require("../controllers/eventsController");
+const jobsController = require("../controllers/jobsController");
 const usersController = require("../controllers/usersController");
 
 router.use(usersController.verifyToken);
 
-router.get("/courses", coursesController.index, coursesController.respondJSON);
+router.get("/events", eventsController.index, eventsController.respondJSON);
 router.get(
-  "/courses/:id/join",
-  coursesController.join,
-  coursesController.respondJSON
+  "/events/:id/join",
+  eventsController.join,
+  eventsController.respondJSON
 );
-router.use(coursesController.errorJSON);
+
+router.get("/jobs", jobsController.index, jobsController.respondJSON);
+router.get(
+  "/jobs/:id/join",
+  jobsController.join,
+  jobsController.respondJSON
+);
+
+router.use(eventsController.errorJSON);
+router.use(jobsController.errorJSON);
+
 module.exports = router;
